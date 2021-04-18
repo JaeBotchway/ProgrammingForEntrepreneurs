@@ -1,0 +1,71 @@
+<html>
+<head>
+<title> Values </title>
+</head>
+<body>
+    <div>
+<label>Minimum Number</label>
+<input type="number" id="val1">
+</div>
+<br/>
+<div>
+<label>Maximum Number</label>
+<input type="number" id="val2">
+</div>
+<br/>
+<div>
+<button onclick="populateList()">Generate list</button>
+</div>
+<br/>
+<div>
+<select id="numberRange"> <!-- Element for dynamic dropdown-->
+    <option>Please select value </option>
+</select>
+</div>
+
+
+<script type = "text/javascript">
+
+var min='';
+var max='';
+var val1='';
+var val2='';
+
+
+function populateList()
+{
+     val1= document.getElementById('val1').value;
+     val2= document.getElementById('val2').value;
+     dropdown=document.getElementById("numberRange");
+
+     if (val1>val2)
+     {
+         max=val1;
+         min=val2;
+     }
+     else
+     {
+        max=val2;
+        min=val1;
+     }
+     console.log(min+','+max);
+
+        for (i=min; i<=max; i++)
+        {
+            console.log(i);
+           
+             option = document.createElement("option");
+                option.text = i;
+                dropdown.add(option);
+            
+        }
+     }
+
+     
+
+
+</script>
+
+</body>
+
+</html>
